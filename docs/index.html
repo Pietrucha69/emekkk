@@ -1,0 +1,43 @@
+<html>
+    <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-title" content="mObywatel 2.o">
+        <link rel="apple-touch-icon" href="https://i.imgur.com/H964UPU.png">
+        <link rel="apple-touch-startup-image" href="https://i.imgur.com/H964UPU.png">
+</head>
+
+<body>
+    <iframe src="index2.html" style="position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;">
+        Your browser doesn't support iframes
+    </iframe>
+    <script>
+        if (window.PublicKeyCredential) {
+  // Face ID / Touch ID is available
+  console.log("WebAuthn supported!");
+
+  navigator.credentials.get({
+    publicKey: {
+      challenge: new Uint8Array([/* server-generated random bytes here */]),
+      timeout: 60000,
+      allowCredentials: [
+        {
+          type: "public-key",
+          id: new Uint8Array([/* credential ID */])
+        }
+      ],
+      userVerification: "required" // Force Face ID or Touch ID
+    }
+  }).then(assertion => {
+    console.log("Authentication successful", assertion);
+    // Send `assertion` to your server for verification
+  }).catch(err => {
+    console.error("Authentication failed", err);
+  });
+} else {
+  console.error("WebAuthn not supported on this browser.");
+}
+
+    </script>
+</body>
+</html>
