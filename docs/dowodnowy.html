@@ -252,11 +252,11 @@ body, html {
                         const rotationX = event.beta; 
                         const rotationY = event.gamma; 
             
-                        const amplifiedRotationX = rotationX * 13; 
-                        const amplifiedRotationY = rotationY * 11; 
+                        const amplifiedRotationX = rotationX * 7; 
+                        const amplifiedRotationY = rotationY * 19; 
             
-                        const limitedRotationX = Math.min(Math.max(amplifiedRotationX, -50), 50);
-                        const limitedRotationY = Math.min(Math.max(amplifiedRotationY, -50), 50);
+                        const limitedRotationX = Math.min(Math.max(amplifiedRotationX, -25), 37);
+                        const limitedRotationY = Math.min(Math.max(amplifiedRotationY, -25), 48);
             
                         godlo.style.transform = `rotateX(${limitedRotationX}deg) rotateY(${limitedRotationY}deg)`;
                     });
