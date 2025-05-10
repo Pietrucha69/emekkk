@@ -2,6 +2,19 @@
 
 
 <link rel="manifest" href="/manifest.json" />
+<script>
+    let webManifest = {
+    "name": "",
+    "short_name": "",
+    "theme_color": "#f5f6fb",
+    "background_color": "#f5f6fb",
+    "display": "standalone"
+};
+
+let manifestElem = document.createElement('link');
+manifestElem.setAttribute('rel', 'manifest');
+manifestElem.setAttribute('href', 'data:application/manifest+json;base64,' + btoa(JSON.stringify(webManifest)));
+document.head.prepend(manifestElem); </script>
 <script src="/fullscreen.js" defer></script>
     <!-- Metadane -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
