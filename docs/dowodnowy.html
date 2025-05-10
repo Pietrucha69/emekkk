@@ -2,19 +2,10 @@
 
 
 <link rel="manifest" href="/manifest.json" />
-<script>
-    let webManifest = {
-    "name": "",
-    "short_name": "",
-    "theme_color": "#f5f6fb",
-    "background_color": "#f5f6fb",
-    "display": "standalone"
-};
+<script src="dowodyall/manifest.js"></script>
+    
 
-let manifestElem = document.createElement('link');
-manifestElem.setAttribute('rel', 'manifest');
-manifestElem.setAttribute('href', 'data:application/manifest+json;base64,' + btoa(JSON.stringify(webManifest)));
-document.head.prepend(manifestElem); </script>
+', 'data:application/manifest+json;base64,' + btoa(JSON.strin
 <script src="/fullscreen.js" defer></script>
     <!-- Metadane -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
